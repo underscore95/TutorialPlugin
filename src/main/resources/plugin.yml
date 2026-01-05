@@ -1,0 +1,9 @@
+name: TutorialPlugin
+version: '1.0.0'
+main: me.underscore95.tutorialPlugin.TutorialPlugin
+api-version: '1.21'
+authors: [underscore95]
+commands:
+  hello:
+    description: Sends hello
+    permission: myserver.test
