@@ -12,7 +12,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.*;
+
 public final class TutorialPlugin extends JavaPlugin implements Listener, CommandExecutor {
+    // "strawberry" -> "fruit"
+    // "raspberry" -> "fruit"
+    // "potato" -> "vegetable"
+    private HashMap<String, String> map = new HashMap<>();
 
     @Override
     public void onEnable() {
@@ -39,10 +45,26 @@ public final class TutorialPlugin extends JavaPlugin implements Listener, Comman
             return false;
         }
 
-        player.sendMessage("Hello!");
-        if (args.length > 0) {
-            player.sendMessage("Your argument: " + args[0]);
-        }
+//        player.sendMessage("Hello!");
+//
+//        if (args.length > 1) {
+//         map.put(args[0],args[1]);
+//
+//
+//        }
+//
+//        for (Map.Entry<String,String> pair : map.entrySet()) {
+//            player.sendMessage("Map key: " + pair.getKey() + ", value: " + pair.getValue());
+//        }
+
+        Apple apple = new Apple();
+        apple.printName(player);
+        apple.calories = 500;
+        apple.shoutNameAndCalories(player);
+
+        Orange orange = new Orange();
+        orange.printName(player);
+
         return true;
     }
 }
